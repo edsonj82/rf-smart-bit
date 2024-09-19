@@ -1,0 +1,8 @@
+api/node_modules/
+api/postgresdata/
+api/.vscode/
+api/tmp/uploads/
+api/__tests__/coverage/
+api/__tests__/database.sqlite
+api/dist/
+api/build/
