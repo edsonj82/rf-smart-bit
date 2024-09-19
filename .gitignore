@@ -1,0 +1,10 @@
+smartbit/application-build/api/.env
+
+smartbit/application-build/api/node_modules/
+smartbit/application-build/api/postgresdata/
+smartbit/application-build/api/.vscode/
+smartbit/application-build/api/tmp/uploads/
+smartbit/application-build/api/__tests__/coverage/
+smartbit/application-build/api/__tests__/database.sqlite
+smartbit/application-build/api/dist/
+smartbit/application-build/api/build/
