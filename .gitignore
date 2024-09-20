@@ -9,3 +9,4 @@ smartbit/application-build/api/dist/
 smartbit/application-build/api/build/
 
 smartbit/smartbit-apps/logs
+smartbit/smartbit-apps/resources/libs/__pycache__/
