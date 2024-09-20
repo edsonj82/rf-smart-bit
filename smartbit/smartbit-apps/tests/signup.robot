@@ -16,4 +16,4 @@ Should be start the client register
     #Click            xpath=//button[text()="Cadastrar"]
     Click            css=button >> text=Cadastrar
 
-    Sleep    5  
+    Wait For Elements State            text=Falta pouco para fazer parte da família Smartbit!    visible    5
