@@ -20,7 +20,7 @@ Should be start the client register
 
     Fill Text        id=name            ${account}[name]
     Fill Text        id=email           ${account}[email]
-    Fill Text        id=document        ${account}[document]
+    Fill Text        id=cpf             ${account}[cpf]
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
@@ -42,7 +42,7 @@ Field name is required
 
     #Fill Text        id=name            ${account}[name]
     Fill Text        id=email           edson@xpto.com
-    Fill Text        id=document        61023331012
+    Fill Text        id=cpf             61023331012
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
@@ -66,7 +66,7 @@ Field email is required
 
     Fill Text        id=name            Edson
     #Fill Text        id=email           edson@xpto.com
-    Fill Text        id=document        61023331012
+    Fill Text        id=cpf             61023331012
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
@@ -90,7 +90,7 @@ Field cpf is required
 
     Fill Text        id=name            Edson
     Fill Text        id=email           edson@xpto.com
-    #Fill Text        id=document        61023331012
+    #Fill Text        id=cpf            61023331012
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
@@ -114,7 +114,7 @@ Field email is invalid
 
     Fill Text        id=name            Edson
     Fill Text        id=email           teste*gamil.com.br
-    Fill Text        id=document        61023331012
+    Fill Text        id=cpf             61023331012
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
@@ -138,7 +138,7 @@ Field cpf is invalid
 
     Fill Text        id=name            Edson
     Fill Text        id=email           teste@gamil.com.br
-    Fill Text        id=document        123456789
+    Fill Text        id=cpf        123456789
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
