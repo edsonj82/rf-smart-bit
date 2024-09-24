@@ -11,8 +11,7 @@ Should be start the client register
 
     ${account}        Get Fake Account
 
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    Start session
 
     Submit signup form      ${account}
 
@@ -27,8 +26,7 @@ Field name is required
     ...     email=edson@xpto.com
     ...     cpf=61023331012
 
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    Start session
     
     Submit signup form      ${account}
 
@@ -45,8 +43,7 @@ Field email is required
     ...     email=${EMPTY}
     ...     cpf=61023331012
 
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    Start session
     
     Submit signup form      ${account}
 
@@ -63,8 +60,7 @@ Field cpf is required
     ...     email=edson@xpto.com
     ...     cpf=${EMPTY}
 
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    Start session
 
     Submit signup form      ${account}
 
@@ -78,8 +74,8 @@ Field email is invalid
 
     ${account}        Get Fake Account
 
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    Start session
+
     Get Text        
     ...     css=#signup h2        
     ...     equal       
@@ -102,8 +98,8 @@ Field cpf is invalid
 
     ${account}        Get Fake Account
 
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    Start session
+    
     Get Text        
     ...     css=#signup h2        
     ...     equal       
@@ -123,6 +119,10 @@ Field cpf is invalid
     Get Text        css=form .notice     equal       Oops! O CPF informado é inválido   
 
 *** Keywords ***
+
+Start session
+    New Browser     browser=firefox       headless=False
+    New Page        http://localhost:3000/
 
  Submit signup form
     [Arguments]     ${account}
