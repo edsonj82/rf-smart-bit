@@ -34,7 +34,7 @@ Field name is required
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Por favor informe o seu nome completo    
+    Notice should be       Por favor informe o seu nome completo    
 
 Field email is required 
 
@@ -51,7 +51,7 @@ Field email is required
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Por favor, informe o seu melhor e-mail
+    Notice should be       Por favor, informe o seu melhor e-mail
 
 Field cpf is required 
 
@@ -68,7 +68,7 @@ Field cpf is required
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Por favor, informe o seu CPF
+    Notice should be       Por favor, informe o seu CPF
 
 Field email is invalid 
 
@@ -92,14 +92,14 @@ Field email is invalid
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Oops! O email informado é inválido
+    Notice should be       Oops! O email informado é inválido
 
 Field cpf is invalid 
 
     ${account}        Get Fake Account
 
     Start session
-    
+
     Get Text        
     ...     css=#signup h2        
     ...     equal       
@@ -116,7 +116,7 @@ Field cpf is invalid
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Oops! O CPF informado é inválido   
+    Notice should be       Oops! O CPF informado é inválido   
 
 *** Keywords ***
 
@@ -124,7 +124,7 @@ Start session
     New Browser     browser=firefox       headless=False
     New Page        http://localhost:3000/
 
- Submit signup form
+Submit signup form
     [Arguments]     ${account}
     Get Text        
     ...     css=#signup h2        
@@ -137,3 +137,9 @@ Start session
 
     Click            
     ...     css=button >> text=Cadastrar
+
+Notice should be
+    [Arguments]     ${target}
+
+    Get Text        css=form .notice     equal       ${target}   
+
