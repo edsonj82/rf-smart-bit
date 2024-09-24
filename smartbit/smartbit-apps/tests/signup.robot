@@ -123,4 +123,28 @@ Field email is invalid
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Oops! O email informado é inválido    
+    Get Text        css=form .notice     equal       Oops! O email informado é inválido
+
+Field cpf is invalid 
+
+    ${account}        Get Fake Account
+
+    New Browser     browser=firefox       headless=False
+    New Page        http://localhost:3000/
+    Get Text        
+    ...     css=#signup h2        
+    ...     equal       
+    ...     Faça seu cadastro e venha para a Smartbit!
+
+    Fill Text        id=name            Edson
+    Fill Text        id=email           teste@gamil.com.br
+    Fill Text        id=document        123456789
+    #Click            xpath=//button[text()="Cadastrar"]
+    Click            
+    ...     css=button >> text=Cadastrar
+
+    Wait For Elements State            
+    ...     css=.notice    
+    ...     visible    5
+
+    Get Text        css=form .notice     equal       Oops! O CPF informado é inválido    
