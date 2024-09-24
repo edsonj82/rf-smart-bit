@@ -30,10 +30,6 @@ Field name is required
     
     Submit signup form      ${account}
 
-    Wait For Elements State            
-    ...     css=.notice    
-    ...     visible    5
-
     Notice should be       Por favor informe o seu nome completo    
 
 Field email is required 
@@ -47,10 +43,6 @@ Field email is required
     
     Submit signup form      ${account}
 
-    Wait For Elements State            
-    ...     css=.notice    
-    ...     visible    5
-
     Notice should be       Por favor, informe o seu melhor e-mail
 
 Field cpf is required 
@@ -63,10 +55,6 @@ Field cpf is required
     Start session
 
     Submit signup form      ${account}
-
-    Wait For Elements State            
-    ...     css=.notice    
-    ...     visible    5
 
     Notice should be       Por favor, informe o seu CPF
 
@@ -88,10 +76,6 @@ Field email is invalid
     Click            
     ...     css=button >> text=Cadastrar
 
-    Wait For Elements State            
-    ...     css=.notice    
-    ...     visible    5
-
     Notice should be       Oops! O email informado é inválido
 
 Field cpf is invalid 
@@ -111,10 +95,6 @@ Field cpf is invalid
     #Click            xpath=//button[text()="Cadastrar"]
     Click            
     ...     css=button >> text=Cadastrar
-
-    Wait For Elements State            
-    ...     css=.notice    
-    ...     visible    5
 
     Notice should be       Oops! O CPF informado é inválido   
 
@@ -140,6 +120,13 @@ Submit signup form
 
 Notice should be
     [Arguments]     ${target}
+    
+    ${element}      Set Variable        css=form .notice
+    
+    Wait For Elements State            
+    ...     ${element}    
+    ...     visible    5
 
-    Get Text        css=form .notice     equal       ${target}   
+    Get Text        
+    ...     css=form .notice     equal       ${target}   
 
