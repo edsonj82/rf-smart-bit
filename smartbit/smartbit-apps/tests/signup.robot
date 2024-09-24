@@ -13,17 +13,8 @@ Should be start the client register
 
     New Browser     browser=firefox       headless=False
     New Page        http://localhost:3000/
-    Get Text        
-    ...     css=#signup h2        
-    ...     equal       
-    ...     Faça seu cadastro e venha para a Smartbit!
 
-    Fill Text        id=name            ${account}[name]
-    Fill Text        id=email           ${account}[email]
-    Fill Text        id=cpf             ${account}[cpf]
-    #Click            xpath=//button[text()="Cadastrar"]
-    Click            
-    ...     css=button >> text=Cadastrar
+    Submit signup form      ${account}
 
     Wait For Elements State            
     ...     text=Falta pouco para fazer parte da família Smartbit!    
@@ -31,21 +22,15 @@ Should be start the client register
 
 Field name is required 
 
-    ${account}        Get Fake Account
+    ${account}        Create Dictionary
+    ...     name=${EMPTY}
+    ...     email=edson@xpto.com
+    ...     cpf=61023331012
 
     New Browser     browser=firefox       headless=False
     New Page        http://localhost:3000/
-    Get Text        
-    ...     css=#signup h2        
-    ...     equal       
-    ...     Faça seu cadastro e venha para a Smartbit!
-
-    #Fill Text        id=name            ${account}[name]
-    Fill Text        id=email           edson@xpto.com
-    Fill Text        id=cpf             61023331012
-    #Click            xpath=//button[text()="Cadastrar"]
-    Click            
-    ...     css=button >> text=Cadastrar
+    
+    Submit signup form      ${account}
 
     Wait For Elements State            
     ...     css=.notice    
@@ -55,21 +40,15 @@ Field name is required
 
 Field email is required 
 
-    ${account}        Get Fake Account
+    ${account}        Create Dictionary
+    ...     name= Edson
+    ...     email=${EMPTY}
+    ...     cpf=61023331012
 
     New Browser     browser=firefox       headless=False
     New Page        http://localhost:3000/
-    Get Text        
-    ...     css=#signup h2        
-    ...     equal       
-    ...     Faça seu cadastro e venha para a Smartbit!
-
-    Fill Text        id=name            Edson
-    #Fill Text        id=email           edson@xpto.com
-    Fill Text        id=cpf             61023331012
-    #Click            xpath=//button[text()="Cadastrar"]
-    Click            
-    ...     css=button >> text=Cadastrar
+    
+    Submit signup form      ${account}
 
     Wait For Elements State            
     ...     css=.notice    
@@ -79,21 +58,15 @@ Field email is required
 
 Field cpf is required 
 
-    ${account}        Get Fake Account
+    ${account}        Create Dictionary
+    ...     name=Edson
+    ...     email=edson@xpto.com
+    ...     cpf=${EMPTY}
 
     New Browser     browser=firefox       headless=False
     New Page        http://localhost:3000/
-    Get Text        
-    ...     css=#signup h2        
-    ...     equal       
-    ...     Faça seu cadastro e venha para a Smartbit!
 
-    Fill Text        id=name            Edson
-    Fill Text        id=email           edson@xpto.com
-    #Fill Text        id=cpf            61023331012
-    #Click            xpath=//button[text()="Cadastrar"]
-    Click            
-    ...     css=button >> text=Cadastrar
+    Submit signup form      ${account}
 
     Wait For Elements State            
     ...     css=.notice    
@@ -147,4 +120,20 @@ Field cpf is invalid
     ...     css=.notice    
     ...     visible    5
 
-    Get Text        css=form .notice     equal       Oops! O CPF informado é inválido    
+    Get Text        css=form .notice     equal       Oops! O CPF informado é inválido   
+
+*** Keywords ***
+
+ Submit signup form
+    [Arguments]     ${account}
+    Get Text        
+    ...     css=#signup h2        
+    ...     equal       
+    ...     Faça seu cadastro e venha para a Smartbit!
+
+    Fill Text        id=name            ${account}[name]
+    Fill Text        id=email           ${account}[email]
+    Fill Text        id=cpf             ${account}[cpf]
+
+    Click            
+    ...     css=button >> text=Cadastrar
