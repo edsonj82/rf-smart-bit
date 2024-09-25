@@ -4,7 +4,7 @@ Documentation        Tests scenarios of client pre-register
 
 #Library        Browser
 
-Resource        ../resources/base.resource
+Resource        ../resources/Base.resource
 
 
 *** Test Cases ***
