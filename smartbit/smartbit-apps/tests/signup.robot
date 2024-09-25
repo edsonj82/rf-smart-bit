@@ -2,9 +2,10 @@
 
 Documentation        Tests scenarios of client pre-register
 
-Library        Browser
+#Library        Browser
 
 Resource        ../resources/base.resource
+
 
 *** Test Cases ***
 Should be start the client register
@@ -96,37 +97,5 @@ Field cpf is invalid
     Click            
     ...     css=button >> text=Cadastrar
 
-    Notice should be       Oops! O CPF informado é inválido   
-
-*** Keywords ***
-
-Start session
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
-
-Submit signup form
-    [Arguments]     ${account}
-    Get Text        
-    ...     css=#signup h2        
-    ...     equal       
-    ...     Faça seu cadastro e venha para a Smartbit!
-
-    Fill Text        id=name            ${account}[name]
-    Fill Text        id=email           ${account}[email]
-    Fill Text        id=cpf             ${account}[cpf]
-
-    Click            
-    ...     css=button >> text=Cadastrar
-
-Notice should be
-    [Arguments]     ${target}
-    
-    ${element}      Set Variable        css=form .notice
-    
-    Wait For Elements State            
-    ...     ${element}    
-    ...     visible    5
-
-    Get Text        
-    ...     css=form .notice     equal       ${target}   
+    Notice should be       Oops! O CPF informado é inválido
 
