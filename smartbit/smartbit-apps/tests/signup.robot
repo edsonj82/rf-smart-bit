@@ -49,7 +49,6 @@ Field cpf is required
     Notice should be       Por favor, informe o seu CPF
 
 Field email is invalid 
-
   
     ${account}        Create Dictionary
     ...     name=Edson
