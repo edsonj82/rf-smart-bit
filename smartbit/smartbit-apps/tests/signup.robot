@@ -15,7 +15,7 @@ Should be start the client register
     Start session
     Submit signup form      ${account}
     Verify welcome message
-
+    Take Screenshot
 
 Field name is required 
 
@@ -26,7 +26,8 @@ Field name is required
 
     Start session
     Submit signup form      ${account}
-    Notice should be       Por favor informe o seu nome completo    
+    Notice should be       Por favor informe o seu nome completo
+    Take Screenshot    
 
 Field email is required 
 
@@ -38,6 +39,7 @@ Field email is required
     Start session
     Submit signup form      ${account}
     Notice should be       Por favor, informe o seu melhor e-mail
+    Take Screenshot
 
 Field cpf is required 
 
@@ -49,6 +51,7 @@ Field cpf is required
     Start session
     Submit signup form      ${account}
     Notice should be       Por favor, informe o seu CPF
+    Take Screenshot
 
 Field email is invalid 
 
@@ -61,6 +64,7 @@ Field email is invalid
     Start session
     Submit signup form      ${account}
     Notice should be       Oops! O email informado é inválido
+    Take Screenshot
 
 Field cpf is invalid 
 
@@ -72,4 +76,4 @@ Field cpf is invalid
     Start session
     Submit signup form      ${account}
     Notice should be       Oops! O CPF informado é inválido
-
+    Take Screenshot
