@@ -10,3 +10,6 @@ smartbit/application-build/api/build/
 
 smartbit/smartbit-apps/logs
 smartbit/smartbit-apps/resources/libs/__pycache__/
+smartbit/smartbit-apps/resources/libs/Database.py
+smartbit/smartbit-apps/tests/temp.html
+smartbit/smartbit-apps/resources/libs/__pycache__/Account.cpython-310.pyc

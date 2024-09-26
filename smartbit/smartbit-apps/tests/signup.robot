@@ -12,8 +12,14 @@ Test Teardown    Take Screenshot
 
 *** Test Cases ***
 Should be start the client register
-
-    ${account}        Get Fake Account
+    [Tags]    smoke
+    # ${account}        Get Fake Account
+    ${account}        Create Dictionary    
+    ...    name=Edson Santos
+    ...    email=edson@yahoo.com
+    ...    cpf=69260657059
+        
+    Delete Account By Email        ${account}[email]
 
     Submit signup form      ${account}
     Verify welcome message
