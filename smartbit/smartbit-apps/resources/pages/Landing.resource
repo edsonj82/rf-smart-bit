@@ -20,15 +20,3 @@ Submit signup form
 
     Click            
     ...     css=button >> text=Cadastrar
-
-Notice should be
-    [Arguments]     ${target}
-    
-    ${element}      Set Variable        css=form .notice
-    
-    Wait For Elements State            
-    ...     ${element}    
-    ...     visible    5
-
-    Get Text        
-    ...     css=form .notice     equal       ${target}   

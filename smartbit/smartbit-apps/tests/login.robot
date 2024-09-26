@@ -34,3 +34,26 @@ Should not login as invalid email
     # Log        ${temp}
 
     Toast should be    As credenciais de acesso fornecidas são inválidas. Tente novamente!
+
+Try invalid login
+    [Template]      Login verify notice
+    ${EMPTY}                ${EMPTY}        Os campos email e senha são obrigatórios.
+    ${EMPTY}                pwd123          Os campos email e senha são obrigatórios.
+    sac@smartbit.com        ${EMPTY}        Os campos email e senha são obrigatórios.
+    www.smartbit.com        pwd123          Oops! O email informado é inválido
+    sac&smartbit.com        pwd123          Oops! O email informado é inválido
+    asdfghjkgjhkghjk        pwd123          Oops! O email informado é inválido
+    !@#$!@##@%$#$%$¨        pwd123          Oops! O email informado é inválido
+    sac*smartbit.com        pwd123          Oops! O email informado é inválido
+    www.smartbit.com        pwd123          Oops! O email informado é inválido
+    smartbit.com@***        pwd123          Oops! O email informado é inválido
+
+
+
+*** Keywords ***
+Login verify notice
+    [Arguments]        ${email}        ${password}        ${output_message}
+
+    Go to Login pages
+    Submit login form    ${email}        ${password}
+    Notice should be    ${output_message}
