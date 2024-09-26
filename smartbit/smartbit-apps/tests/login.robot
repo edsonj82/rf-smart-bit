@@ -23,3 +23,14 @@ Should not login as invalid password
     # Log        ${temp}
 
     Toast should be    As credenciais de acesso fornecidas são inválidas. Tente novamente!
+
+Should not login as invalid email
+    Go to Login pages
+    Submit login form    404@smartbit.com    pwd123
+
+    #Captura pagina html com o Toast visivel para fazer a validação (tudo visivel no log.thml)
+    # Sleep       3
+    # ${temp}    Get Page Source
+    # Log        ${temp}
+
+    Toast should be    As credenciais de acesso fornecidas são inválidas. Tente novamente!
