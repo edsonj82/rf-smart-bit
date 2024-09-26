@@ -26,7 +26,7 @@ Should not login as invalid password
 
 Should not login as invalid email
     Go to Login pages
-    Submit login form    404@smartbit.com    pwd123
+    Submit login form    404@smartbit.com    abc123
 
     #Captura pagina html com o Toast visivel para fazer a validação (tudo visivel no log.thml)
     # Sleep       3
