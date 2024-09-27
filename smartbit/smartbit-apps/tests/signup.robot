@@ -12,7 +12,6 @@ Test Teardown    Take Screenshot
 
 *** Test Cases ***
 Should be start the client register
-    [Tags]    smoke
     # ${account}        Get Fake Account
     ${account}        Create Dictionary    
     ...    name=Edson Santos
