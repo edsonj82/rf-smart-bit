@@ -17,12 +17,17 @@ Should realize a new Enrolls
     Go to Enrolls form
 
     Fill Text    css=input[aria-label=select_account]    Edson Santos
-    # Capturar nome e cpf do usuario durante para realiar a matricula
+    Select account     Edson Santos    69260657059
+    
+    Fill Text    css=input[aria-label=select_plan]      Plano Black
+    Click        css=div[class$=option] >> text=Plano Black
+    Sleep    5
+
+# Capturar nome e cpf do usuario durante para realiar a matricula
     # Sleep    2
     # ${html}    Get Page Source
     # Log    ${html}
-    Select account     Edson Santos    69260657059
- 
+
 *** Keywords ***
 Go to Enrolls 
     Click    css=a[href="/memberships"]
