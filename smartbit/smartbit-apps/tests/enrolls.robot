@@ -16,7 +16,7 @@ Should realize a new Enrolls
     Go to Enrolls
     Go to Enrolls form
 
-    Fill Text    css=input[aria-label=select_account]    Edson Santos
+    # Fill Text    css=input[aria-label=select_account]    Edson Santos
     Select account     Edson Santos    69260657059
 
     Select plan        Plano Black
