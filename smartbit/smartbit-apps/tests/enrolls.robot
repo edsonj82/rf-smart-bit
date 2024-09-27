@@ -18,10 +18,9 @@ Should realize a new Enrolls
 
     Fill Text    css=input[aria-label=select_account]    Edson Santos
     Select account     Edson Santos    69260657059
-    
-    Fill Text    css=input[aria-label=select_plan]      Plano Black
-    Click        css=div[class$=option] >> text=Plano Black
-    Sleep    5
+
+    Select plan        Plano Black
+
 
 # Capturar nome e cpf do usuario durante para realiar a matricula
     # Sleep    2
@@ -46,4 +45,10 @@ Select account
 
     Fill Text       css=input[aria-label=select_account]    ${name}
     Click           css=[data-testid="${cpf}"]
+    Sleep    5
+
+Select plan
+    [Arguments]    ${plan}
+    Fill Text    css=input[aria-label=select_plan]      ${plan}
+    Click        css=div[class$=option] >> text=${plan}
     Sleep    5
