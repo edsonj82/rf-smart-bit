@@ -21,6 +21,13 @@ Should realize a new Enrolls
 
     Select plan        Plano Black
 
+    Fill payment card    
+    ...    4242424242424242
+    ...    Edson José
+    ...    11
+    ...    2030
+    ...    123
+    
 
 # Capturar nome e cpf do usuario durante para realiar a matricula
     # Sleep    2
@@ -52,3 +59,13 @@ Select plan
     Fill Text    css=input[aria-label=select_plan]      ${plan}
     Click        css=div[class$=option] >> text=${plan}
     Sleep    5
+
+Fill payment card
+    [Arguments]    ${number}    ${holder}    ${month}    ${year}    ${cvv}
+    Fill Text    css=input[name=card_number]        ${number}
+    Fill Text    css=input[name=card_holder]        ${holder}
+    Fill Text    css=input[name=card_month]         ${month}
+    Fill Text    css=input[name=card_year]          ${year}
+    Fill Text    css=input[name=card_cvv]           ${cvv}
+    
+    Sleep    3
