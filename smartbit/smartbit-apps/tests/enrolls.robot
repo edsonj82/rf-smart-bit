@@ -28,6 +28,9 @@ Should realize a new Enrolls
     ...    2030
     ...    123
     
+    Click    css=button[type=submit] >> text=Cadastrar
+
+    Toast should be    Matrícula cadastrada com sucesso.
 
 # Capturar nome e cpf do usuario durante para realiar a matricula
     # Sleep    2
