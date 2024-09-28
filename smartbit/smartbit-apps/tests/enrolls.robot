@@ -55,13 +55,11 @@ Select account
 
     Fill Text       css=input[aria-label=select_account]    ${name}
     Click           css=[data-testid="${cpf}"]
-    Sleep    5
 
 Select plan
     [Arguments]    ${plan}
     Fill Text    css=input[aria-label=select_plan]      ${plan}
     Click        css=div[class$=option] >> text=${plan}
-    Sleep    5
 
 Fill payment card
     [Arguments]    ${number}    ${holder}    ${month}    ${year}    ${cvv}
@@ -70,5 +68,3 @@ Fill payment card
     Fill Text    css=input[name=card_month]         ${month}
     Fill Text    css=input[name=card_year]          ${year}
     Fill Text    css=input[name=card_cvv]           ${cvv}
-    
-    Sleep    3
