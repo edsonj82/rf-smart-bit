@@ -9,6 +9,14 @@ Test Teardown    Take Screenshot
 
 *** Test Cases ***
 Should realize a new Enrolls
+    ${account}            Create Dictionary        
+    ...    name=Paulo Cintura
+    ...    email=paulo@cintura.com.br
+    ...    cpf=05138356011
+    
+    Delete Account By Email    ${account}[email]
+    Insert Account    ${account}
+
     Go to Login pages
     Submit login form    sac@smartbit.com    pwd123
     User is logged in    sac@smartbit.com
@@ -17,13 +25,13 @@ Should realize a new Enrolls
     Go to Enrolls form
 
     # Fill Text    css=input[aria-label=select_account]    Edson Santos
-    Select account     Edson Santos    69260657059
+    Select account     Paulo Cintura    05138356011
 
     Select plan        Plano Black
 
     Fill payment card    
     ...    4242424242424242
-    ...    Edson José
+    ...    Pauo Cintura
     ...    11
     ...    2030
     ...    123
