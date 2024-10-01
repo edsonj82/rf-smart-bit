@@ -31,22 +31,11 @@ Should realize a new Memberships
     Insert Account                  ${data}[account]
 
     SignIn admin    
-
-    
     Go to Memberships
-    Go to Memberships form
-
-    # Fill Text    css=input[aria-label=select_account]    Edson Santos
-    Select account      ${data}[account][name]    ${data}[account][cpf]
-    Select plan         ${data}[plan]
-    Fill payment card   ${data}[credit_card]
-    
-    Click    css=button[type=submit] >> text=Cadastrar
-
+    Create new membership    ${data}
     Toast should be    Matrícula cadastrada com sucesso.
 
 # Capturar nome e cpf do usuario durante para realiar a matricula
     # Sleep    2
     # ${html}    Get Page Source
     # Log    ${html}
-    

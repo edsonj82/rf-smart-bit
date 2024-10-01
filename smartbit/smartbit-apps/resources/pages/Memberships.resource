@@ -7,6 +7,17 @@ Library         Browser
 
 *** Keywords ***
 
+Create new membership
+    [Arguments]        ${data}
+
+    Go to Memberships form
+    # Fill Text    css=input[aria-label=select_account]    Edson Santos
+    Select account      ${data}[account][name]    ${data}[account][cpf]
+    Select plan         ${data}[plan]
+    Fill payment card   ${data}[credit_card]
+
+    Click    css=button[type=submit] >> text=Cadastrar
+
 Go to Memberships form
     Click    css=a[href="/memberships/new"]
 
