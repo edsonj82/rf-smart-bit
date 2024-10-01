@@ -13,5 +13,20 @@
             "year":"2030",
             "cvv":"123"
         }
+    },
+    "duplicate":{
+        "account":{
+            "name":"Paulo Cintura Neto QA",
+            "email":"paulo@cintura.com.br",
+            "cpf":"24215362008"
+        },
+        "plan":"Plano Black",
+        "credit_card":{
+            "number":"4242424242424242",
+            "holder":"Paulo Cintura Neto QA",
+            "month":"11",
+            "year":"2030",
+            "cvv":"123"
+        }
     }
 }
