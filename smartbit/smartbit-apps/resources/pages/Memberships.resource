@@ -1,0 +1,38 @@
+
+*** Settings ***
+
+Documentation           Accounts actions and Elements
+
+Library         Browser
+
+*** Keywords ***
+Go to Memberships 
+    Click    css=a[href="/memberships"]
+
+    Wait For Elements State    css=h1 >> text=Matrículas    
+    ...    visible    5
+
+Go to Memberships form
+    Click    css=a[href="/memberships/new"]
+
+    Wait For Elements State    css=h1 >> text=Nova Matrícula    
+    ...    visible    5
+
+Select account
+    [Arguments]    ${name}    ${cpf}
+
+    Fill Text       css=input[aria-label=select_account]    ${name}
+    Click           css=[data-testid="${cpf}"]
+
+Select plan
+    [Arguments]    ${plan}
+    Fill Text    css=input[aria-label=select_plan]      ${plan}
+    Click        css=div[class$=option] >> text=${plan}
+
+Fill payment card
+    [Arguments]    ${card}
+    Fill Text    css=input[name=card_number]        ${card}[number]
+    Fill Text    css=input[name=card_holder]        ${card}[holder]
+    Fill Text    css=input[name=card_month]         ${card}[month]
+    Fill Text    css=input[name=card_year]          ${card}[year]
+    Fill Text    css=input[name=card_cvv]           ${card}[cvv]
