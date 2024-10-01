@@ -2,6 +2,8 @@
 
 Documentation     Folder main of the Robot Project
 
+Library        JSONLibrary
+
 Library         Browser
 Library         libs/Account.py
 Library         libs/Database.py
@@ -18,3 +20,13 @@ Resource        pages/components/BoxNotice.resource
 Start session
     New Browser     browser=firefox       headless=False
     New Page        http://localhost:3000/
+
+# HELPERS
+Get Json fixture
+    [Arguments]        ${file_name}        ${scenario}
+
+    ${data}        Load Json From File    
+    ...            ${EXECDIR}/smartbit-apps/resources/fixtures/${file_name}.json
+    ...            encoding=utf-8
+    
+    [return]        ${data}[${scenario}]
