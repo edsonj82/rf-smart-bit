@@ -30,9 +30,8 @@ Should realize a new Memberships
     Delete Account By Email         ${data}[account][email]
     Insert Account                  ${data}[account]
 
-    Go to Login pages
-    Submit login form    sac@smartbit.com    pwd123
-    User is logged in    sac@smartbit.com
+    SignIn admin    sac@smartbit.com    pwd123
+
     
     Go to Memberships
     Go to Memberships form

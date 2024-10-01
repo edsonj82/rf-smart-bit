@@ -33,3 +33,9 @@ Get Json fixture
     ...            encoding=utf-8
     
     [return]        ${data}[${scenario}]
+
+SignIn admin
+    [Arguments]    ${email}        ${password}
+    Go to Login pages
+    Submit login form    ${email}    ${password}
+    User is logged in    ${email}
