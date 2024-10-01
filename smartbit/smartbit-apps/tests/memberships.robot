@@ -30,7 +30,7 @@ Should realize a new Memberships
     Delete Account By Email         ${data}[account][email]
     Insert Account                  ${data}[account]
 
-    SignIn admin    sac@smartbit.com    pwd123
+    SignIn admin    
 
     
     Go to Memberships

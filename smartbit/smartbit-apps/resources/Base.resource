@@ -18,6 +18,10 @@ Resource        pages/components/Navbar.resource
 Resource        pages/components/Toast.resource
 Resource        pages/components/BoxNotice.resource
 
+*** Variables ***
+${ADMIN_EMAIL}          sac@smartbit.com    
+${ADMIN_PASSWORD}       pwd123
+
 *** Keywords ***
 
 Start session
@@ -35,7 +39,8 @@ Get Json fixture
     [return]        ${data}[${scenario}]
 
 SignIn admin
-    [Arguments]    ${email}        ${password}
+    # [Arguments]    ${email}        ${password}
     Go to Login pages
-    Submit login form    ${email}    ${password}
-    User is logged in    ${email}
+    Submit login form    ${ADMIN_EMAIL}    ${ADMIN_PASSWORD}
+    User is logged in    ${ADMIN_EMAIL}
+   
