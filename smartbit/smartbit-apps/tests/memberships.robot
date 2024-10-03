@@ -53,3 +53,13 @@ Should not realize a Membership duplicate
     # Sleep    8
     Create new membership    ${data}
     Toast should be    O usuário já possui matrícula.
+
+
+Should search by name
+    [Tags]    search
+    ${name}        Set Variable        Emily Stone
+
+    SignIn admin
+    Go to Memberships
+    Search by name        ${name}
+    Filter by name        ${name}
