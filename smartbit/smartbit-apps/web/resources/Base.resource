@@ -34,7 +34,7 @@ Get Json fixture
     [Arguments]        ${file_name}        ${scenario}
 
     ${data}        Load Json From File    
-    ...            ${EXECDIR}/smartbit-apps/resources/fixtures/${file_name}.json
+    ...            ${EXECDIR}/smartbit-apps/web/resources/fixtures/${file_name}.json
     ...            encoding=utf-8
     
     [return]        ${data}[${scenario}]
