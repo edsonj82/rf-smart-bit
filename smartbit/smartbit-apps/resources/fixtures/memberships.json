@@ -36,5 +36,24 @@
             "year":"2030",
             "cvv":"123"
         }
+    },
+    "search":{
+        "account":{
+            "name":"Mariana Silva",
+            "email":"mariana@cintura.com.br",
+            "cpf":"22702623018"
+        },
+        "plan":{
+            "name":"Plano Smart",
+            "id":1,
+            "price": 99.99
+        },
+        "credit_card":{
+            "number":"4242424242424242",
+            "holder":"Mariana Silva",
+            "month":"11",
+            "year":"2030",
+            "cvv":"123"
+        }
     }
 }

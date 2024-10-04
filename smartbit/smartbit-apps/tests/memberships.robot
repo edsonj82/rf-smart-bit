@@ -57,9 +57,12 @@ Should not realize a Membership duplicate
 
 Should search by name
     [Tags]    search
-    ${name}        Set Variable        Emily Stone
+    # ${name}        Set Variable        Emily Stone
+    ${data}        Get Json fixture    memberships    search
+
+    Insert Membership    ${data}
 
     SignIn admin
     Go to Memberships
-    Search by name        ${name}
-    Filter by name        ${name}
+    Search by name        ${data}[account][name]
+    Filter by name        ${data}[account][name]
