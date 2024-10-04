@@ -53,3 +53,13 @@ Filter by name
     [Arguments]    ${name}
     Wait For Elements State    css=table tbody tr >> text=${name}    
     ...    visible    5
+    
+    
+Request removal by name
+    [Arguments]    ${name}
+    Click    xpath=//td[text()="${name}"]/..//button
+
+Membership should not be visible
+    [Arguments]    ${name}
+    Wait For Elements State    css=table tbody tr >> text=${name}    
+    ...    detached    5

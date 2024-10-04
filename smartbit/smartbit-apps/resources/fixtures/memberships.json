@@ -55,5 +55,24 @@
             "year":"2030",
             "cvv":"123"
         }
+    },
+    "remove":{
+        "account":{
+            "name":"Tamires Albuquerque",
+            "email":"tamires@albuquerque.com.br",
+            "cpf":"86093514080"
+        },
+        "plan":{
+            "name":"Plano Black",
+            "id":1,
+            "price": 79.99
+        },
+        "credit_card":{
+            "number":"4242424242424242",
+            "holder":"Tamires Albuquerque",
+            "month":"11",
+            "year":"2030",
+            "cvv":"123"
+        }
     }
 }

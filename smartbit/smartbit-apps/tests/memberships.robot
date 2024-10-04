@@ -56,7 +56,6 @@ Should not realize a Membership duplicate
 
 
 Should search by name
-    [Tags]    search
     # ${name}        Set Variable        Emily Stone
     ${data}        Get Json fixture    memberships    search
 
@@ -66,3 +65,22 @@ Should search by name
     Go to Memberships
     Search by name        ${data}[account][name]
     Filter by name        ${data}[account][name]
+
+Should delete a membership
+    [Tags]    remove
+    ${data}        Get Json fixture    memberships    remove
+
+    Insert Membership    ${data}
+
+    SignIn admin
+    Go to Memberships
+
+    Request removal by name    ${data}[account][name]
+    Confirm removal
+    Membership should not be visible    ${data}[account][name]
+
+
+
+
+    # Search by name        ${data}[account][name]
+    # Filter by name        ${data}[account][name]
