@@ -11,3 +11,13 @@ Test Teardown        Finish Session
 Should loggIn with CPF and Id
     SignIn with documents            00000014141
     User is logged In
+
+CPF not register
+    SignIn with documents       48487877001
+    Popup with message          Acesso não autorizado! Entre em contato com a central de atendimento
+
+CPF invalid
+    [Tags]    temp
+
+    SignIn with documents       00000000000
+    Popup with message          CPF inválido, tente novamente

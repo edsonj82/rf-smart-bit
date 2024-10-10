@@ -6,8 +6,8 @@ Library        AppiumLibrary
 Resource        ./actions/login.resource
 Resource        ./actions/account.resource
 Resource        ./actions/mybody.resource
-Resource        ./actions/menu.resource
-
+Resource        ./actions/components/menu.resource
+Resource        ./actions/components/popup.resource
 
 *** Keywords ***
 Start Session
