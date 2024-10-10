@@ -9,7 +9,11 @@ Test Teardown        Finish Session
 
 *** Test Cases ***
 Should loggIn with CPF and Id
-    SignIn with documents            00000014141
+    [Tags]    temp
+    ${data}        Get Json fixture    login
+    Insert Membership                ${data}
+
+    SignIn with documents            ${data}[account][cpf]
     User is logged In
 
 CPF not register
@@ -17,7 +21,5 @@ CPF not register
     Popup with message          Acesso não autorizado! Entre em contato com a central de atendimento
 
 CPF invalid
-    [Tags]    temp
-
     SignIn with documents       00000000000
     Popup with message          CPF inválido, tente novamente

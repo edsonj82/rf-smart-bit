@@ -1,0 +1,21 @@
+{
+    "login":{
+        "account":{
+            "name":"Edson Santos",
+            "email":"edson@santos.com.br",
+            "cpf":"55095540029"
+        },
+        "plan":{
+            "name":"Plano Black",
+            "id":2,
+            "price": 79.99
+        },
+        "credit_card":{
+            "number":"4242424242424242",
+            "holder":"Edson Santos",
+            "month":"11",
+            "year":"2030",
+            "cvv":"123"
+        }
+    }
+}

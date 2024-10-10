@@ -2,6 +2,9 @@
 Documentation        Main folder of the tests automationa project to Mobile App
 
 Library        AppiumLibrary
+Library        JSONLibrary
+
+Library         ../../libs/Database.py
 
 Resource        ./actions/login.resource
 Resource        ./actions/account.resource
@@ -24,3 +27,13 @@ Start Session
 Finish Session
     Capture Page Screenshot
     Close All Applications
+
+# HELPERS
+Get Json fixture
+    [Arguments]        ${scenario}
+
+    ${data}        Load Json From File    
+    ...            ${EXECDIR}/resources/fixtures/data.json
+    ...            encoding=utf-8
+    
+    [return]        ${data}[${scenario}]
