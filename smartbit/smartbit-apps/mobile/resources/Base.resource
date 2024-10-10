@@ -3,6 +3,10 @@ Documentation        Main folder of the tests automationa project to Mobile App
 
 Library        AppiumLibrary
 
+Resource        ./actions/login.resource
+Resource        ./actions/account.resource
+Resource        ./actions/mybody.resource
+Resource        ./actions/menu.resource
 
 
 *** Keywords ***
