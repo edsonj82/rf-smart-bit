@@ -9,7 +9,6 @@ Test Teardown        Finish Session
 
 *** Test Cases ***
 Should loggIn with CPF and Id
-    [Tags]    temp
     ${data}        Get Json fixture    login
     Insert Membership                ${data}
 
