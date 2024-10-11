@@ -32,5 +32,6 @@ Get account by name
     ...    params=${params}
     ...    headers=${headers}
     
-    Log    ${response.json()}
+    # Log    ${response.json()}
+    RETURN    ${response.json()}[data][0]
 

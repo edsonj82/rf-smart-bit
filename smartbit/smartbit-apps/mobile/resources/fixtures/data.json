@@ -23,8 +23,8 @@
             "name": "Domique Toretto",
             "email": "toretto@dominique.com.br",
             "cpf": "41023717026",
-            "weight":"78",
-            "height":"182"
+            "weight":78,
+            "height":182
         },
         "plan": {
             "name": "Plano Black",

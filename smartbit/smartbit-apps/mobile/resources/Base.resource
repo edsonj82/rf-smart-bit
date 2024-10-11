@@ -6,6 +6,8 @@ Library        JSONLibrary
 
 Library         ../../libs/Database.py
 
+Resource        ../../services/service.resource
+
 Resource        ./actions/login.resource
 Resource        ./actions/account.resource
 Resource        ./actions/mybody.resource
@@ -36,4 +38,4 @@ Get Json fixture
     ...            ${EXECDIR}/resources/fixtures/data.json
     ...            encoding=utf-8
     
-    [return]        ${data}[${scenario}]
+    RETURN        ${data}[${scenario}]
