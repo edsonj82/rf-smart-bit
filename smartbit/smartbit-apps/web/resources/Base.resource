@@ -2,6 +2,8 @@
 
 Documentation     Folder main of the Robot Project
 
+Variables        env.py
+
 Library        JSONLibrary
 
 Library         Browser
@@ -26,18 +28,18 @@ ${ADMIN_PASSWORD}       pwd123
 *** Keywords ***
 
 Start session
-    New Browser     browser=firefox       headless=False
-    New Page        http://localhost:3000/
+    New Browser     browser=${BROWSER}       headless=${HEADLESS}
+    New Page        ${BASE_URL}
 
 # HELPERS
 Get Json fixture
     [Arguments]        ${file_name}        ${scenario}
 
     ${data}        Load Json From File    
-    ...            ${EXECDIR}/smartbit-apps/web/resources/fixtures/${file_name}.json
+    ...            ${EXECDIR}/resources/fixtures/${file_name}.json
     ...            encoding=utf-8
     
-    [return]        ${data}[${scenario}]
+    RETURN        ${data}[${scenario}]
 
 SignIn admin
     # [Arguments]    ${email}        ${password}
