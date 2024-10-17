@@ -4,7 +4,7 @@ Documentation        Camada de integração com a API
 
 Library             RequestsLibrary
 
-Variables            env.py
+Variables            Env.py
 
 *** Keywords ***
 Set user token
