@@ -66,7 +66,25 @@ Testes desenvolvidos para realizar a validação dos requisitos funcionais e ana
 # User Mobile
 
 ## 🔖 Requisitos funcionais
-# Documentação em construção
+## Login
+
+- [X] Should loggIn with CPF and Id
+- [X] CPF not register
+- [X] CPF invalid
+
+| campos | descrição                             | tipo     | obrigatório |
+| :----- | :------------------------------------ | :------- | :---------- |
+| ip     | ip identificador único                | numerico | sim         |
+| cpf    | cpf identificador único               | numerico | sim         |
+
+## MyBody
+
+- [X] Should register my physical measurements
+
+| campos | descrição                             | tipo     | obrigatório |
+| :----- | :------------------------------------ | :------- | :---------- |
+| weight | peso do aluno matriculado             | numerico | não         |
+| height | altura do aluno matriculado           | numerico | não         |
 
 ## 🚀 Tecnologias
 # Documentação em construção
