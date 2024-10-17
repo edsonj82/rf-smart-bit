@@ -21,3 +21,5 @@ smartbit/smartbit-apps/mobile/logs/
 smartbit/smartbit-apps/libs/__pycache__/
 smartbit/smartbit-apps/services/logs/
 smartbit/smartbit-apps/libs/__pycache__/Database.cpython-310.pyc
+smartbit/smartbit-apps/web/logs/
+smartbit/smartbit-apps/libs/__pycache__/Account.cpython-310.pyc
