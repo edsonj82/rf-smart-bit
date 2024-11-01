@@ -1,4 +1,3 @@
-<!-- # Introdução aos testes de performance com k6 -->
 # SMARTBIT  - testes funcionais via Web e Mobile utilizando Robot Framework
 
 Este repositório é um projeto de testes realizado sobre o framework Robot Framework. 
@@ -117,5 +116,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 ## Agradecimento
-<!-- Feito com 💜 &nbsp;por Fernando Papito 👋 &nbsp;[Meu linkedin](https://www.linkedin.com/in/papitoio/) -->
+
 Agradecimento especial ao Fernando Papito que vem contribuindo e popularizando cada vez mais com seus treinamentos e incentivo aos estudos de testes.
